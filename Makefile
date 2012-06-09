@@ -92,6 +92,9 @@ ifeq (,$(findstring Windows,$(OS)))
     INSTALL_SHORT1= $(INSTALL_LIB)/$(INSTALL_DYLIBSHORT1)
     INSTALL_SHORT2= $(INSTALL_LIB)/$(INSTALL_DYLIBSHORT2)
     LDCONFIG= :
+    SED_PC= sed \
+      -e "s|^prefix=.*|prefix=$(PREFIX)|" \
+      -e "s|^libname=.*|libname=luajit-51|"
   endif
 endif
 
